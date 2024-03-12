@@ -28,4 +28,10 @@ public class Producto {
     private Integer stockQuantity;
 
     private Integer state;
+
+    // Relacion Muchos a Uno, se relaciona por el nombre del atributo en la DB
+    // No podemos agregar ni modificar una categoria desde la relacion que tiene con producto
+    @ManyToOne
+    @JoinColumn(name = "category_id", insertable = false, updatable = false)
+    private Categoria categoria;
 }

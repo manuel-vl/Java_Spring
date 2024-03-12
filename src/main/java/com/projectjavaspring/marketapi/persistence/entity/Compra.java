@@ -1,13 +1,11 @@
 package com.projectjavaspring.marketapi.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Data
 // Indicando que esta clase mapea una tabla de la DB
@@ -32,4 +30,14 @@ public class Compra {
     private String comment;
 
     private String state;
+
+    // Relacion Muchos a Uno
+    @ManyToOne
+    // No permitimos crear clientes atraves de esta relacion
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private Cliente cliente;
+
+    // Relacion Uno a Muchos
+    @OneToMany(mappedBy = "compra")
+    private Set<ComprasProducto> comprasProductos;
 }

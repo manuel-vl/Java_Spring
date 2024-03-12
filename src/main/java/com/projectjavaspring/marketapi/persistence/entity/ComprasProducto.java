@@ -16,4 +16,16 @@ public class ComprasProducto {
     private Double total;
 
     private Integer state;
+
+    // Relacion Muchos a Uno
+    @ManyToOne
+    // No permitimos crear compra atraves de esta relacion
+    @JoinColumn(name = "purchase_id", insertable = false, updatable = false)
+    private Compra compra;
+
+    // Relacion Muchos a Uno
+    @ManyToOne
+    // No permitimos crear producto a traves de esta relacion
+    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    private Producto producto;
 }

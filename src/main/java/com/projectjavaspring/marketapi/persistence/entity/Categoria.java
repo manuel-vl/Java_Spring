@@ -1,10 +1,9 @@
 package com.projectjavaspring.marketapi.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 @Entity
@@ -17,4 +16,8 @@ public class Categoria {
     private String description;
 
     private Integer state;
+
+    // Relacion Uno a Muchos
+    @OneToMany(mappedBy = "categoria")
+    private Set<Producto> productos;
 }
