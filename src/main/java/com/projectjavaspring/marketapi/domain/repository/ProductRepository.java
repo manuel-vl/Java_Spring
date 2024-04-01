@@ -1,6 +1,7 @@
 package com.projectjavaspring.marketapi.domain.repository;
 
 import com.projectjavaspring.marketapi.domain.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;

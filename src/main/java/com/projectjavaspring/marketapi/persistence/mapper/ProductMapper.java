@@ -10,6 +10,7 @@ import org.mapstruct.Mappings;
 import java.util.List;
 
 // El uses CategoryMapper se encarga de mapear lo relacionado a category
+// componentModel = spring, nos garanzita que el modelo del componente es de Spring
 @Mapper(componentModel = "spring", uses = {CategoryMapper.class})
 public interface ProductMapper {
     @Mappings({
