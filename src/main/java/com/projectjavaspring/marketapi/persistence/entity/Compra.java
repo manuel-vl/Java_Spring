@@ -34,10 +34,10 @@ public class Compra {
     // Relacion Muchos a Uno
     @ManyToOne
     // No permitimos crear clientes atraves de esta relacion
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "client_id", insertable = false, updatable = false)
     private Cliente cliente;
 
     // Relacion Uno a Muchos
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private Set<ComprasProducto> comprasProductos;
 }

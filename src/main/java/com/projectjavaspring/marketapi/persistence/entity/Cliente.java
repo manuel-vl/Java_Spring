@@ -19,7 +19,7 @@ public class Cliente {
 
     private String surnames;
 
-    private Double cellphone;
+    private Long cellphone;
 
     private String address;
 

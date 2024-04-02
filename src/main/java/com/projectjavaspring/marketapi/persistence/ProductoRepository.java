@@ -21,6 +21,7 @@ public class ProductoRepository implements ProductRepository {
     @Override
     public List<Product> getAll() {
         List<Producto> productos= (List<Producto>) productoCrudRepository.findAll();
+        System.out.println("PRODUCTOS"+ productos);
         return mapper.toProducts(productos);
     }
 

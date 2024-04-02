@@ -19,6 +19,7 @@ public class ComprasProducto {
 
     // Relacion Muchos a Uno
     @ManyToOne
+    @MapsId("idPurchase")
     // No permitimos crear compra atraves de esta relacion
     @JoinColumn(name = "purchase_id", insertable = false, updatable = false)
     private Compra compra;
